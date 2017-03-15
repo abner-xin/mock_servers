@@ -2,6 +2,7 @@ import zone_file
 import json
 from logger import logger
 
+"""ZoneJson can be used to generate zone data for DNS server"""
 
 zone_template="""{
     "empty.zone":{
@@ -27,13 +28,13 @@ zone_template="""{
 
 class ZoneJson:
     """this case will process json zone file, refer to configs/zone_template.json"""
-    def __init__(self, zonefile=None):
-        self.zonefile = zonefile
+    def __init__(self, json_file=None):
+        self.json_file = json_file
         self.data = self._load()
 
     def _load(self):
-        if self.zonefile:
-            with open(self.zonefile, 'r') as f:
+        if self.json_file:
+            with open(self.json_file, 'r') as f:
                 return json.loads(f.read())
         else:
             return json.loads(zone_template)
