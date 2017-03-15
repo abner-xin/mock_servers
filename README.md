@@ -1,5 +1,5 @@
-# Note
- - all my servers are hold on RPC server. so you can start/stop mock servers by RPC requests.
+all my servers are hold by a RPC server on port 8270. so you can start/stop mock servers by RPC requests.
+details info refer to test_client.py
 
 # supported mock servers:
  - SMTP server
