@@ -1,11 +1,12 @@
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SocketServer import ThreadingMixIn
-from logger import logger
 
-from my_ssh_tunnel_server import MySSHTunnelServer
-from my_http_server import MyHTTPServer
-from my_dns_server import MyDNSServer
-from my_mail_server import MyMailServer
+from my_servers.my_dns_server import MyDNSServer
+from my_servers.my_http_server import MyHTTPServer
+
+from logger import logger
+from my_servers.my_mail_server import MyMailServer
+from my_servers.my_ssh_tunnel_server import MySSHTunnelServer
 
 
 class RemoteServer(ThreadingMixIn,
