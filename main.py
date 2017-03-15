@@ -5,13 +5,15 @@ from logger import logger
 from my_ssh_tunnel_server import MySSHTunnelServer
 from my_http_server import MyHTTPServer
 from my_dns_server import MyDNSServer
+from my_mail_server import MyMailServer
 
 
 class RemoteServer(ThreadingMixIn,
                    SimpleXMLRPCServer,
                    MySSHTunnelServer,
                    MyHTTPServer,
-                   MyDNSServer):
+                   MyDNSServer,
+                   MyMailServer):
     def __init__(self, host='0.0.0.0', port=8270, allow_stop=True):
         SimpleXMLRPCServer.__init__(self, (host, int(port)), logRequests=False, allow_none=True)
 
